@@ -10,7 +10,6 @@ export interface Review {
   id: string;
   slug: string;
   productId: Product["id"];
-  personaIds: Persona["id"][];
   scores: PersonaScore[];
   pros: string[];
   cons: string[];

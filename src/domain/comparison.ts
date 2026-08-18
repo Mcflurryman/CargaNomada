@@ -5,5 +5,5 @@ export interface Comparison {
   slug: string;
   title: string;
   description: string;
-  products: Product["id"][];
+  productIds: Product["id"][];
 }
