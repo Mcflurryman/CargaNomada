@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const navigation = [
-  ["Encontrar una power station", "/encontrar-power-station"],
   ["Perfiles", "/perfiles"],
   ["Reviews", "/reviews"],
   ["Comparativas", "/comparativas"],
@@ -9,14 +8,11 @@ const navigation = [
 ] as const;
 
 export function SiteHeader() {
-  return (
-    <header>
-      <nav aria-label="Navegación principal">
-        <Link href="/">Carga Nómada</Link>
+  return <header className="site-header"><nav className="container site-header__nav" aria-label="Navegación principal">
+        <Link className="site-header__brand" href="/">Carga <span>Nómada</span></Link>
         <ul>
           {navigation.map(([label, href]) => <li key={href}><Link href={href}>{label}</Link></li>)}
         </ul>
-      </nav>
-    </header>
-  );
+        <Link className="site-header__cta" href="/encontrar-power-station">Encuentra la tuya <span aria-hidden="true">→</span></Link>
+      </nav></header>;
 }
