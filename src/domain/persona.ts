@@ -40,6 +40,9 @@ export interface Persona {
   name: string;
   slug: string;
   label: string;
+  age?: number;
+  occupation?: string;
+  travelsWith?: string[];
   shortDescription: string;
   lifestyle: string;
   description: string;
