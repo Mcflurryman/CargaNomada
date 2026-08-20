@@ -1,0 +1,113 @@
+import { defineProduct, type Product } from "@/domain/product";
+
+export const products = [
+defineProduct({
+  id: "fossibot-f1200", brandId: "fossibot", name: "FOSSiBOT F1200", slug: "fossibot-f1200", model: "F1200",
+  capacityWh: 1024, continuousOutputWatts: 1200, peakOutputWatts: 2400,
+  battery: { chemistry: "LiFePO4", cycles: 4000, retainedCapacityPercentAtCycles: 80 },
+  weightKg: 11.5, dimensions: { widthMm: 324, heightMm: 262, depthMm: 205 },
+  charging: { maxAcInputWatts: 1000, maxSolarInputWatts: 200, maxCombinedInputWatts: 1200, vehicle: { inputVolts: [12], maxWattsByVoltage: { 12: 120 } }, manufacturerDeclaredTimes: [
+    { method: "ac", fromPercent: 0, toPercent: 100, durationMinutes: 70, inputWatts: 1000, evidence: "manufacturer-declared" },
+    { method: "solar", fromPercent: 0, toPercent: 100, durationMinutes: 390, inputWatts: 200, conditions: "Sol óptimo y orientación ideal", evidence: "manufacturer-declared" },
+    { method: "ac-and-solar", fromPercent: 0, toPercent: 100, durationMinutes: 60, inputWatts: 1200, conditions: "Sol óptimo y orientación ideal", evidence: "manufacturer-declared" },
+    { method: "vehicle", fromPercent: 0, toPercent: 100, durationMinutes: 640, inputWatts: 96, evidence: "manufacturer-declared" },
+  ] },
+  outputs: { ac: [{ quantity: 2, connection: "outlet", maxCombinedWatts: 1200, socketRegion: "EU" }], usbA: [{ quantity: 2, maxWatts: 18 }], usbC: [{ quantity: 1, maxWatts: 20 }, { quantity: 1, maxWatts: 100 }], dc: [{ type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10, maxWatts: 120 }] },
+  features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, simultaneousChargeAndDischarge: true, pureSineWave: true, expandableBattery: false, ledLight: true, adjustableAcInput: true },
+  warranty: { duration: 5, unit: "years" }, pricing: { current: 429, original: 699, currency: "EUR", checkedAt: "2026-08-20" },
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f1200", verifiedAt: "2026-08-20" }, images: [],
+}),
+defineProduct({
+  id: "fossibot-f1800", brandId: "fossibot", name: "FOSSiBOT F1800", slug: "fossibot-f1800", model: "F1800",
+  capacityWh: 1024, continuousOutputWatts: 1800, peakOutputWatts: 3600,
+  battery: { chemistry: "LiFePO4", cycles: 4000, retainedCapacityPercentAtCycles: 80 },
+  weightKg: 11.25, dimensions: { widthMm: 371, heightMm: 258, depthMm: 206 },
+  charging: { maxAcInputWatts: 1200, maxSolarInputWatts: 500, maxCombinedInputWatts: 1700, vehicle: { inputVolts: [12], maxWattsByVoltage: { 12: 120 } }, manufacturerDeclaredTimes: [
+    { method: "ac", fromPercent: 0, toPercent: 100, durationMinutes: 68, inputWatts: 1200, evidence: "manufacturer-declared" },
+    { method: "solar", fromPercent: 0, toPercent: 100, durationMinutes: 120, inputWatts: 500, conditions: "Sol óptimo y orientación ideal", evidence: "manufacturer-declared" },
+    { method: "vehicle", fromPercent: 0, toPercent: 100, durationMinutes: 540, inputWatts: 120, evidence: "manufacturer-declared" },
+  ] },
+  outputs: { ac: [{ quantity: 2, connection: "outlet", maxCombinedWatts: 1800, socketRegion: "EU" }], usbA: [{ quantity: 1, maxWatts: 18 }], usbC: [{ quantity: 2, maxWatts: 140, protocol: "PD 3.0" }], dc: [{ type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10, maxWatts: 120 }] },
+  features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, mppt: true, pureSineWave: true, expandableBattery: false, ledLight: true },
+  warranty: { duration: 5, unit: "years" }, pricing: { current: 459, original: 799, currency: "EUR", checkedAt: "2026-08-20" },
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f1800", verifiedAt: "2026-08-20" }, images: [],
+}),
+defineProduct({
+  id: "fossibot-f2400",
+  brandId: "fossibot",
+  name: "FOSSiBOT F2400",
+  slug: "fossibot-f2400",
+  model: "F2400",
+  capacityWh: 2048,
+  continuousOutputWatts: 2400,
+  peakOutputWatts: 4800,
+  battery: { chemistry: "LiFePO4", cycles: 4000, retainedCapacityPercentAtCycles: 80 },
+  weightKg: 22,
+  dimensions: { widthMm: 386, heightMm: 284, depthMm: 321 },
+  charging: {
+    maxAcInputWatts: 1100,
+    maxSolarInputWatts: 500,
+    maxCombinedInputWatts: 1600,
+    vehicle: { inputVolts: [12, 24], maxWattsByVoltage: { 12: 100, 24: 200 } },
+    manufacturerDeclaredTimes: [
+      { method: "ac", fromPercent: 0, toPercent: 100, durationMinutes: 120, inputWatts: 1100, evidence: "manufacturer-declared" },
+      { method: "solar", fromPercent: 0, toPercent: 100, durationMinutes: 240, inputWatts: 500, conditions: "Sol óptimo y orientación ideal", evidence: "manufacturer-declared" },
+      { method: "ac-and-solar", fromPercent: 0, toPercent: 100, durationMinutes: 90, inputWatts: 1600, conditions: "Entrada AC y solar simultánea; sol óptimo y orientación ideal", evidence: "manufacturer-declared" },
+      { method: "vehicle", fromPercent: 0, toPercent: 100, durationMinutes: 1020, inputWatts: 100, conditions: "Toma de vehículo de 12 V", evidence: "manufacturer-declared" },
+      { method: "vehicle", fromPercent: 0, toPercent: 100, durationMinutes: 510, inputWatts: 200, conditions: "Toma de vehículo de 24 V", evidence: "manufacturer-declared" },
+    ],
+  },
+  outputs: {
+    ac: [{ quantity: 3, maxCombinedWatts: 2400, socketRegion: "EU" }],
+    usbA: [{ quantity: 2, maxWatts: 18, protocol: "QC 3.0" }],
+    usbC: [{ quantity: 3, maxWatts: 20, protocol: "PD" }, { quantity: 1, maxWatts: 100, protocol: "PD" }],
+    dc: [
+      { type: "rv", quantity: 1, voltage: 12, maxAmps: 25, regulated: true },
+      { type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10, regulated: true },
+      { type: "dc5521", quantity: 2, voltage: 12, maxAmps: 3, regulated: true },
+    ],
+  },
+  features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, mppt: true, simultaneousChargeAndDischarge: true, pureSineWave: true, expandableBattery: false, ledLight: true, adjustableAcInput: true },
+  warranty: { duration: 5, unit: "years", conditions: "Garantía total declarada por FOSSiBOT EU" },
+  pricing: { current: 759, original: 1199, currency: "EUR", checkedAt: "2026-08-20" },
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f2400", verifiedAt: "2026-08-20" },
+  images: [],
+}),
+defineProduct({
+  id: "fossibot-f3600-pro", brandId: "fossibot", name: "FOSSiBOT F3600 Pro", slug: "fossibot-f3600-pro", model: "F3600 Pro",
+  capacityWh: 3840, continuousOutputWatts: 3600, peakOutputWatts: 7200,
+  battery: { chemistry: "LiFePO4", cycles: 6500, retainedCapacityPercentAtCycles: 50 },
+  weightKg: 42, dimensions: { widthMm: 609, heightMm: 475.5, depthMm: 321 },
+  charging: { maxAcInputWatts: 2200, maxSolarInputWatts: 2000, maxCombinedInputWatts: 4200, vehicle: { inputVolts: [12, 24] }, manufacturerDeclaredTimes: [
+    { method: "ac", fromPercent: 0, toPercent: 100, durationMinutes: 120, inputWatts: 2200, evidence: "manufacturer-declared" },
+    { method: "solar", fromPercent: 0, toPercent: 100, durationMinutes: 120, inputWatts: 2000, evidence: "manufacturer-declared" },
+    { method: "ac-and-solar", fromPercent: 0, toPercent: 100, durationMinutes: 90, inputWatts: 4200, evidence: "manufacturer-declared" },
+    { method: "vehicle", fromPercent: 0, toPercent: 100, durationMinutes: 1920, conditions: "Toma de vehículo de 12 V", evidence: "manufacturer-declared" },
+    { method: "vehicle", fromPercent: 0, toPercent: 100, durationMinutes: 960, conditions: "Toma de vehículo de 24 V", evidence: "manufacturer-declared" },
+  ] },
+  outputs: { ac: [{ quantity: 3, connection: "outlet", maxCombinedWatts: 3600, socketRegion: "EU" }], usbA: [{ quantity: 2, maxWatts: 18, protocol: "QC 3.0" }], usbC: [{ quantity: 3, maxWatts: 20, protocol: "PD" }, { quantity: 1, maxWatts: 100, protocol: "PD" }], dc: [{ type: "rv", quantity: 1, voltage: 12, maxAmps: 25 }, { type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10 }, { type: "dc5521", quantity: 2, voltage: 12, maxAmps: 3 }] },
+  features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, mppt: true, simultaneousChargeAndDischarge: true, pureSineWave: true, expandableBattery: true, adjustableAcInput: true },
+  warranty: { duration: 5, unit: "years" }, pricing: { current: 1429, original: 2599, currency: "EUR", checkedAt: "2026-08-20" },
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f3600-pro", verifiedAt: "2026-08-20" }, images: [],
+}),
+defineProduct({
+  id: "fossibot-f7200", brandId: "fossibot", name: "FOSSiBOT F7200", slug: "fossibot-f7200", model: "F7200",
+  capacityWh: 5222.4, continuousOutputWatts: 7200, peakOutputWatts: 9000,
+  battery: { chemistry: "LiFePO4", cycles: 6500, retainedCapacityPercentAtCycles: 80 },
+  weightKg: 70, dimensions: { widthMm: 670, heightMm: 410, depthMm: 450 },
+  charging: { maxAcInputWatts: 3000, maxSolarInputWatts: 3700, maxCombinedInputWatts: 5200, vehicle: { inputVolts: [12, 24] }, manufacturerDeclaredTimes: [
+    { method: "ac", fromPercent: 0, toPercent: 100, durationMinutes: 135, inputWatts: 3000, evidence: "manufacturer-declared" },
+    { method: "solar", fromPercent: 0, toPercent: 100, durationMinutes: 145, inputWatts: 2500, conditions: "Entrada solar de alta tensión", evidence: "manufacturer-declared" },
+    { method: "solar", fromPercent: 0, toPercent: 100, durationMinutes: 261, inputWatts: 1200, conditions: "Entrada solar de baja tensión", evidence: "manufacturer-declared" },
+    { method: "ac-and-solar", fromPercent: 0, toPercent: 100, durationMinutes: 90, inputWatts: 5200, conditions: "AC, solar de alta tensión y solar de baja tensión simultáneas", evidence: "manufacturer-declared" },
+  ] },
+  outputs: { ac: [{ quantity: 4, connection: "outlet", maxCombinedWatts: 7200, socketRegion: "EU" }, { quantity: 1, connection: "hardwire-terminal", maxCombinedWatts: 7200 }], usbA: [{ quantity: 1, maxWatts: 18, protocol: "QC 3.0" }], usbC: [{ quantity: 1, maxWatts: 20, protocol: "PD" }, { quantity: 1, maxWatts: 100, protocol: "PD" }] },
+  features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, simultaneousChargeAndDischarge: true, expandableBattery: true },
+  warranty: { duration: 5, unit: "years" }, pricing: { current: 2899, original: 3499, currency: "EUR", checkedAt: "2026-08-20" },
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f7200", verifiedAt: "2026-08-20" }, images: [],
+}),
+] as const satisfies readonly Product[];
+
+export function getProductById(id: Product["id"]): Product | undefined { return products.find((product) => product.id === id); }
+export function getProductBySlug(slug: string): Product | undefined { return products.find((product) => product.slug === slug); }
+export const fossibotF2400 = products.find((product) => product.id === "fossibot-f2400")!;

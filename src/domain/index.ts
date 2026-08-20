@@ -1,7 +1,10 @@
 export type { Brand } from "@/domain/brand";
 export type { Comparison } from "@/domain/comparison";
 export type { Guide } from "@/domain/guide";
+export { defineExpansionBattery } from "@/domain/expansion-battery";
+export type { ExpansionBattery } from "@/domain/expansion-battery";
 export { definePersona } from "@/domain/persona";
 export type { Persona, PersonaPriorities, PersonaPriority, PersonaSeo, PersonaTechnicalLevel, PersonaVoice } from "@/domain/persona";
-export type { Product, ProductDimensions, ProductPorts } from "@/domain/product";
+export { defineProduct } from "@/domain/product";
+export type { AcOutputGroup, BatteryChemistry, ChargingMethod, Currency, DcOutputGroup, ManufacturerDeclaredChargeTime, Product, ProductBattery, ProductCharging, ProductDimensions, ProductFeatures, ProductImage, ProductOutputs, ProductPricing, ProductSource, ProductWarranty, UsbOutputGroup, VehicleChargingInput, WarrantyUnit } from "@/domain/product";
 export type { PersonaScore, Review } from "@/domain/review";

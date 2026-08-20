@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { personas } from "@/content/personas";
+import { fossibotF2400 } from "@/content/products";
 import { SiteFooter } from "@/components/site-footer";
 import styles from "./page.module.css";
 
@@ -43,6 +44,7 @@ const latestGuides = [
 ] as const;
 
 export default function HomePage() {
+  const featuredProduct = fossibotF2400;
   return <><main className={styles.home}>
     <section className={styles.hero} aria-labelledby="hero-title">
       <Image className={styles.heroImage} src="/images/home/hero/Hero.png" alt="Camper junto al mar con una power station en una mesa exterior" fill priority sizes="100vw" />
@@ -50,7 +52,7 @@ export default function HomePage() {
       <p className={styles.heroNote}>Información clara para decidir<br />sin convertir los vatios en humo.</p>
     </section>
 
-    <section className={`${styles.section} ${styles.featured}`} aria-labelledby="featured-title"><div className={`container ${styles.featuredGrid}`}><div><p className={styles.kicker}>En portada · Contenido pendiente</p><h2 id="featured-title">Análisis destacado</h2><p className={styles.sectionIntro}>Este espacio mostrará nuestra review principal cuando exista un análisis verificable.</p></div><article className={styles.featuredCard}><div className={styles.mediaPlaceholder} role="img" aria-label="Imagen del análisis pendiente"><span>Imagen pendiente</span><b>CN<br />—</b></div><div className={styles.featuredCopy}><p className={styles.meta}>Review · Modelo por confirmar</p><h3>Primer análisis editorial en preparación</h3><p>No publicaremos conclusiones ni experiencia de uso hasta disponer de contenido suficientemente documentado.</p><Link href="/reviews">Consultar el archivo de reviews <span aria-hidden="true">→</span></Link></div></article></div></section>
+    <section className={`${styles.section} ${styles.featured}`} aria-labelledby="featured-title"><div className={`container ${styles.featuredGrid}`}><div><p className={styles.kicker}>En portada · Ficha verificada</p><h2 id="featured-title">Análisis destacado</h2><p className={styles.sectionIntro}>Primer producto documentado en nuestro catálogo. La ficha recoge datos del fabricante; la review todavía no está publicada.</p></div><article className={styles.featuredCard}><div className={styles.mediaPlaceholder} role="img" aria-label={`Imagen propia o autorizada de ${featuredProduct.name}, pendiente de incorporar`}><span>Imagen autorizada pendiente</span><b>{featuredProduct.model}<br />—</b></div><div className={styles.featuredCopy}><p className={styles.meta}>Power station · Análisis en preparación</p><h3>{featuredProduct.name}</h3><dl className={styles.specList}><div><dt>Capacidad</dt><dd>{featuredProduct.capacityWh} Wh</dd></div><div><dt>Potencia continua</dt><dd>{featuredProduct.continuousOutputWatts} W</dd></div><div><dt>Batería</dt><dd>{featuredProduct.battery.chemistry}</dd></div><div><dt>Peso</dt><dd>{featuredProduct.weightKg} kg</dd></div></dl><p>Ficha técnica normalizada desde la información oficial de FOSSiBOT. Aún no implica prueba, puntuación ni veredicto editorial.</p><Link href="/reviews">Análisis en preparación <span aria-hidden="true">→</span></Link></div></article></div></section>
 
     <section className={styles.section} aria-labelledby="reviews-title"><div className="container"><div className={styles.headingRow}><div><p className={styles.kicker}>Archivo · Actualizaciones</p><h2 id="reviews-title">Últimas reviews</h2></div><Link href="/reviews">Ver todas las reviews <span aria-hidden="true">→</span></Link></div><div className={styles.reviewGrid}>{pendingReviews.map(([label, title, description], index) => <article className={styles.reviewCard} key={label}><div className={styles.thumb} aria-hidden="true"><span>0{index + 1}</span></div><p className={styles.meta}>{label} · Publicación pendiente</p><h3>{title}</h3><p>{description}</p><Link href="/reviews">Estado del contenido <span aria-hidden="true">→</span></Link></article>)}</div></div></section>
 
