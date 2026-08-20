@@ -7,4 +7,5 @@ export { definePersona } from "@/domain/persona";
 export type { Persona, PersonaPriorities, PersonaPriority, PersonaSeo, PersonaTechnicalLevel, PersonaVoice } from "@/domain/persona";
 export { defineProduct } from "@/domain/product";
 export type { AcOutputGroup, BatteryChemistry, ChargingMethod, Currency, DcOutputGroup, ManufacturerDeclaredChargeTime, Product, ProductBattery, ProductCharging, ProductDimensions, ProductFeatures, ProductImage, ProductOutputs, ProductPricing, ProductSource, ProductWarranty, UsbOutputGroup, VehicleChargingInput, WarrantyUnit } from "@/domain/product";
-export type { PersonaScore, Review } from "@/domain/review";
+export { defineReview } from "@/domain/review";
+export type { EvidenceKind, Review, ReviewFaq, ReviewFocus, ReviewSeo } from "@/domain/review";
