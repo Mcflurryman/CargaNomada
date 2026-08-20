@@ -15,7 +15,12 @@ defineProduct({
   outputs: { ac: [{ quantity: 2, connection: "outlet", maxCombinedWatts: 1200, socketRegion: "EU" }], usbA: [{ quantity: 2, maxWatts: 18 }], usbC: [{ quantity: 1, maxWatts: 20 }, { quantity: 1, maxWatts: 100 }], dc: [{ type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10, maxWatts: 120 }] },
   features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, simultaneousChargeAndDischarge: true, pureSineWave: true, expandableBattery: false, ledLight: true, adjustableAcInput: true },
   warranty: { duration: 5, unit: "years" }, pricing: { current: 429, original: 699, currency: "EUR", checkedAt: "2026-08-20" },
-  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f1200", verifiedAt: "2026-08-20" }, images: [],
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f1200", verifiedAt: "2026-08-20" },
+  images: [
+    { src: "/images/products/fossibot-f1200/hero.webp", alt: "FOSSiBOT F1200 vista frontal y lateral sobre fondo blanco", kind: "product", ownership: "authorized" },
+    { src: "/images/products/fossibot-f1200/ports.webp", alt: "Panel frontal de la FOSSiBOT F1200 con pantalla y puertos USB", kind: "detail", ownership: "authorized" },
+    { src: "/images/products/fossibot-f1200/camping.jpg", alt: "FOSSiBOT F1200 cargando un portátil, un móvil y un dron al aire libre", kind: "lifestyle", ownership: "authorized" },
+  ],
 }),
 defineProduct({
   id: "fossibot-f1800", brandId: "fossibot", name: "FOSSiBOT F1800", slug: "fossibot-f1800", model: "F1800",
@@ -30,7 +35,12 @@ defineProduct({
   outputs: { ac: [{ quantity: 2, connection: "outlet", maxCombinedWatts: 1800, socketRegion: "EU" }], usbA: [{ quantity: 1, maxWatts: 18 }], usbC: [{ quantity: 2, maxWatts: 140, protocol: "PD 3.0" }], dc: [{ type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10, maxWatts: 120 }] },
   features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, mppt: true, pureSineWave: true, expandableBattery: false, ledLight: true },
   warranty: { duration: 5, unit: "years" }, pricing: { current: 459, original: 799, currency: "EUR", checkedAt: "2026-08-20" },
-  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f1800", verifiedAt: "2026-08-20" }, images: [],
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f1800", verifiedAt: "2026-08-20" },
+  images: [
+    { src: "/images/products/fossibot-f1800/hero.webp", alt: "FOSSiBOT F1800 vista frontal sobre fondo blanco", kind: "product", ownership: "authorized" },
+    { src: "/images/products/fossibot-f1800/ports.webp", alt: "FOSSiBOT F1800 vista frontal y lateral con pantalla y conexiones", kind: "detail", ownership: "authorized" },
+    { src: "/images/products/fossibot-f1800/solar-kit.webp", alt: "FOSSiBOT F1800 junto a un panel solar plegable", kind: "lifestyle", ownership: "authorized" },
+  ],
 }),
 defineProduct({
   id: "fossibot-f2400",
@@ -71,7 +81,11 @@ defineProduct({
   warranty: { duration: 5, unit: "years", conditions: "Garantía total declarada por FOSSiBOT EU" },
   pricing: { current: 759, original: 1199, currency: "EUR", checkedAt: "2026-08-20" },
   source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f2400", verifiedAt: "2026-08-20" },
-  images: [],
+  images: [
+    { src: "/images/products/fossibot-f2400/hero.webp", alt: "FOSSiBOT F2400 vista frontal sobre fondo blanco", kind: "product", ownership: "authorized" },
+    { src: "/images/products/fossibot-f2400/ports.webp", alt: "FOSSiBOT F2400 junto a un panel solar plegable", kind: "detail", ownership: "authorized" },
+    { src: "/images/products/fossibot-f2400/caravan.webp", alt: "FOSSiBOT F2400 con dos paneles solares plegables", kind: "lifestyle", ownership: "authorized" },
+  ],
 }),
 defineProduct({
   id: "fossibot-f3600-pro", brandId: "fossibot", name: "FOSSiBOT F3600 Pro", slug: "fossibot-f3600-pro", model: "F3600 Pro",
@@ -88,7 +102,12 @@ defineProduct({
   outputs: { ac: [{ quantity: 3, connection: "outlet", maxCombinedWatts: 3600, socketRegion: "EU" }], usbA: [{ quantity: 2, maxWatts: 18, protocol: "QC 3.0" }], usbC: [{ quantity: 3, maxWatts: 20, protocol: "PD" }, { quantity: 1, maxWatts: 100, protocol: "PD" }], dc: [{ type: "rv", quantity: 1, voltage: 12, maxAmps: 25 }, { type: "car-socket", quantity: 1, voltage: 12, maxAmps: 10 }, { type: "dc5521", quantity: 2, voltage: 12, maxAmps: 3 }] },
   features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, mppt: true, simultaneousChargeAndDischarge: true, pureSineWave: true, expandableBattery: true, adjustableAcInput: true },
   warranty: { duration: 5, unit: "years" }, pricing: { current: 1429, original: 2599, currency: "EUR", checkedAt: "2026-08-20" },
-  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f3600-pro", verifiedAt: "2026-08-20" }, images: [],
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f3600-pro", verifiedAt: "2026-08-20" },
+  images: [
+    { src: "/images/products/fossibot-f3600-pro/hero.webp", alt: "FOSSiBOT F3600 Pro vista frontal y lateral sobre fondo blanco", kind: "product", ownership: "authorized" },
+    { src: "/images/products/fossibot-f3600-pro/ports.webp", alt: "Panel frontal y conexiones de la FOSSiBOT F3600 Pro", kind: "detail", ownership: "authorized" },
+    { src: "/images/products/fossibot-f3600-pro/fb3840-system.webp", alt: "Batería de expansión FOSSiBOT FB3840 sobre fondo blanco", kind: "product", ownership: "authorized" },
+  ],
 }),
 defineProduct({
   id: "fossibot-f7200", brandId: "fossibot", name: "FOSSiBOT F7200", slug: "fossibot-f7200", model: "F7200",
@@ -104,7 +123,12 @@ defineProduct({
   outputs: { ac: [{ quantity: 4, connection: "outlet", maxCombinedWatts: 7200, socketRegion: "EU" }, { quantity: 1, connection: "hardwire-terminal", maxCombinedWatts: 7200 }], usbA: [{ quantity: 1, maxWatts: 18, protocol: "QC 3.0" }], usbC: [{ quantity: 1, maxWatts: 20, protocol: "PD" }, { quantity: 1, maxWatts: 100, protocol: "PD" }] },
   features: { wifi: true, bluetooth: true, app: true, ups: true, bms: true, simultaneousChargeAndDischarge: true, expandableBattery: true },
   warranty: { duration: 5, unit: "years" }, pricing: { current: 2899, original: 3499, currency: "EUR", checkedAt: "2026-08-20" },
-  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f7200", verifiedAt: "2026-08-20" }, images: [],
+  source: { manufacturer: "FOSSiBOT", url: "https://eu.fossibot.com/products/fossibot-f7200", verifiedAt: "2026-08-20" },
+  images: [
+    { src: "/images/products/fossibot-f7200/hero.webp", alt: "FOSSiBOT F7200 vista frontal y lateral sobre fondo blanco", kind: "product", ownership: "authorized" },
+    { src: "/images/products/fossibot-f7200/terminals.webp", alt: "Panel frontal, tomas y conexiones de la FOSSiBOT F7200", kind: "detail", ownership: "authorized" },
+    { src: "/images/products/fossibot-f7200/fb5222-system.webp", alt: "Batería de expansión FOSSiBOT FB5222 sobre fondo blanco", kind: "product", ownership: "authorized" },
+  ],
 }),
 ] as const satisfies readonly Product[];
 

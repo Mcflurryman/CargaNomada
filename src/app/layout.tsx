@@ -9,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es"><body><SiteHeader />{children}</body></html>;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const schema = { "@context": "https://schema.org", "@graph": [
+    { "@type": "Organization", "@id": `${siteUrl}#organization`, name: "Carga Nómada", url: siteUrl, description: "Publicación editorial especializada en power stations y energía portátil para viajar." },
+    { "@type": "WebSite", "@id": `${siteUrl}#website`, url: siteUrl, name: "Carga Nómada", inLanguage: "es", publisher: { "@id": `${siteUrl}#organization` } },
+  ] };
+  return <html lang="es"><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><SiteHeader />{children}</body></html>;
 }
