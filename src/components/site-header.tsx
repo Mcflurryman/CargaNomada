@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navigation = [
-  ["Perfiles", "/perfiles"],
   ["Reviews", "/reviews"],
   ["Comparativas", "/comparativas"],
   ["Guías", "/guias"],
+  ["Metodología", "/sobre-carga-nomada"],
 ] as const;
 
 export function SiteHeader() {
@@ -13,6 +13,6 @@ export function SiteHeader() {
         <ul>
           {navigation.map(([label, href]) => <li key={href}><Link href={href}>{label}</Link></li>)}
         </ul>
-        <Link className="site-header__cta" href="/encontrar-power-station">Encuentra la tuya <span aria-hidden="true">→</span></Link>
+        <Link className="site-header__cta" href="/guias">Aprende lo básico <span aria-hidden="true">→</span></Link>
       </nav></header>;
 }
