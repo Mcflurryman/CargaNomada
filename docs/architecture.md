@@ -40,3 +40,7 @@ Datos editoriales / futura fuente de contenido
 ```
 
 En esta fase no hay productos, reviews, afiliación, cuestionario, CMS ni algoritmo de recomendaciones.
+
+## Continuidad editorial
+
+La biografía, voz, hobbies, relaciones y continuidad visual de Juan, Laura, Álex, Sergio y Carmen se documentan en [`editorial-personas.md`](./editorial-personas.md). `src/content/personas.ts` sigue siendo la fuente de datos operativa; ambos archivos deben actualizarse juntos cuando cambie un rasgo compartido.
