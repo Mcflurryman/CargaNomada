@@ -70,6 +70,14 @@ const sectionHeadings = {
   ],
 } as const;
 
+const chargingIntros = {
+  juan: "Yo miraría estos tiempos para saber si puedo dejarla lista antes de salir o recuperar carga durante una parada. Con solar contaría siempre con margen: en el camping rara vez tengo las condiciones perfectas de una ficha.",
+  alex: "Para mí la recarga forma parte de la jornada. Los 500 W solares de la F1800 me permiten plantear una recuperación seria mientras trabajo, aunque dimensionaría los paneles por tensión y corriente, no solo por vatios.",
+  laura: "Yo organizaría la recarga alrededor del viaje, no a la familia alrededor de la batería. La red me sirve para salir al 100 % y el solar o el vehículo para recuperar energía durante la ruta.",
+  carmen: "Prefiero una recarga sencilla y poco frecuente. Estos tiempos me orientan para aprovechar una parada con red o un buen día de sol sin pasar el viaje pendiente del porcentaje.",
+  sergio: "No dimensionaría la parte solar con un tiempo promocional. Primero comprobaría ventanas MPPT, tensión, corriente, protecciones y producción en el peor periodo razonable; después usaría estos tiempos como referencia.",
+} as const;
+
 export function generateStaticParams() {
   return reviews.map(({ slug }) => ({ slug }));
 }
@@ -249,12 +257,21 @@ export default async function ReviewPage({ params }: Props) {
             <p className={styles.kicker}>{review.eyebrow}</p>
             <h1>{review.h1}</h1>
             <p className={styles.dek}>{review.excerpt}</p>
+            <div className={styles.perspectiveNote}>
+              <strong>
+                Perspectiva editorial: {persona.name} · {persona.label}
+              </strong>
+              <span>
+                Análisis basado en especificaciones verificadas y estimaciones.
+                Las pruebas físicas se identifican siempre como tales.
+              </span>
+            </div>
             <p className={styles.byline}>
               Por{" "}
               <Link href="/sobre-carga-nomada">
                 Equipo editorial de Carga Nómada
               </Link>{" "}
-              · Publicado el 20 de agosto de 2026 · Revisado el 20 de agosto de
+              · Publicado el 20 de agosto de 2026 · Revisado el 21 de agosto de
               2026
             </p>
             {product.images[0] && (
@@ -423,9 +440,11 @@ export default async function ReviewPage({ params }: Props) {
                 <p className={styles.index}>07 · Recarga</p>
                 <h2>{headings[3]}</h2>
                 <p>
-                  Estos son los tiempos publicados por FOSSiBOT. Los usaría para
-                  planificar, sabiendo que el sol, la temperatura, el tramo de
-                  carga y la fuente pueden cambiar el resultado.
+                  {
+                    chargingIntros[
+                      review.personaId as keyof typeof chargingIntros
+                    ]
+                  }
                 </p>
                 <table>
                   <thead>
@@ -582,9 +601,15 @@ export default async function ReviewPage({ params }: Props) {
                 <h2>Datos del producto</h2>
                 <div className={styles.disclosure}>
                   <p>
-                    Ficha revisada el 20 de agosto de 2026. El precio y las
-                    especificaciones pueden cambiar, por lo que conviene
-                    comprobar la documentación vigente antes de comprar.
+                    Los perfiles de Carga Nómada representan distintos tipos de
+                    usuario. Los datos técnicos proceden de fuentes verificadas;
+                    las estimaciones se identifican y las pruebas físicas solo se
+                    publican cuando existen.
+                  </p>
+                  <p>
+                    Ficha revisada el 21 de agosto de 2026. El precio y las
+                    especificaciones pueden cambiar; comprueba la documentación
+                    vigente antes de comprar.
                   </p>
                 </div>
                 <ul className={styles.sourceList}>

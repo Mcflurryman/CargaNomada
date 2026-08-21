@@ -1,0 +1,1 @@
+.grid{display:grid;gap:10px;margin:28px 0}.grid article{padding:18px;background:#191b1c;color:#fffdfa;border-bottom:3px solid #d8e84e}.grid strong{font:700 1.25rem 'Source Serif 4',serif}.grid p{margin:8px 0 0;color:#c7cac3;font-size:.82rem!important}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
