@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
+import { AutonomyCalculator } from "@/components/tools/autonomy-calculator";
 import { getProductById } from "@/content/products";
+import { getCalculatorProducts } from "@/lib/calculator-products";
 import styles from "../guide.module.css";
 
 const guideSlug = "calcular-autonomia-power-station";
@@ -31,6 +33,7 @@ const examples = [
   { label: "Starlink + portátil", capacity: f1800.capacityWh, watts: 130, result: hours(f1800.capacityWh, 130), note: "Ejemplo combinado de 70 W para Starlink y 60 W para el portátil; ambos pueden variar." },
   { label: "Cafetera", capacity: f2400.capacityWh, watts: 1000, result: hours(f2400.capacityWh, 1000), note: "No suele funcionar una hora seguida: 5 minutos a 1.000 W equivalen a unos 83 Wh antes de pérdidas." },
 ] as const;
+const calculatorProducts = getCalculatorProducts();
 
 export default async function GuidePage({ params }: Props) {
   if ((await params).slug !== guideSlug) notFound();
@@ -56,6 +59,7 @@ export default async function GuidePage({ params }: Props) {
 
     <div className="container">
       <section className={styles.quick} aria-labelledby="en-pocas-palabras"><div><p className={styles.kicker}>En pocas palabras</p><h2 id="en-pocas-palabras">La fórmula que necesitas</h2></div><div className={styles.formula} role="img" aria-label="Energía útil en Wh dividida entre consumo en W es igual a horas aproximadas"><span>Energía útil (Wh)</span><i aria-hidden="true"/><span>Consumo total (W)</span><b>=</b><strong>horas aproximadas</strong></div><p>La fórmula es sencilla. Lo difícil es usar un consumo realista y no confundir la capacidad nominal con la energía que finalmente llega a tus aparatos.</p></section>
+      <AutonomyCalculator products={calculatorProducts}/>
       <div className={styles.layout}><article className={styles.article}>
         <section id="desde-cero"><p className={styles.index}>01 · Desde cero</p><h2>Wh disponibles y W consumidos</h2><p>Los <strong>vatios hora (Wh)</strong> indican cuánta energía puede almacenar una power station. Los <strong>vatios (W)</strong> indican a qué ritmo está utilizando energía un aparato en un momento concreto. Una cifra habla del depósito; la otra, de la velocidad a la que lo vacías.</p><p>Una power station de 1.024 Wh no entrega automáticamente 1.024 W durante una hora a cualquier equipo. Podría alimentar, de forma ideal, una carga de 100 W durante unas 10,2 horas o una carga de 500 W durante unas 2 horas. En la práctica durará menos por las pérdidas y porque muchos aparatos no consumen siempre lo mismo.</p><aside className={styles.callout}><strong>La idea clave</strong><p>Más Wh suelen significar más tiempo. Más W de salida significan que puedes conectar aparatos más potentes, pero no que la batería vaya a durar más.</p></aside></section>
 

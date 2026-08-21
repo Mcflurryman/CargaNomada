@@ -1,5 +1,10 @@
-import { PagePlaceholder } from "@/components/page-placeholder";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { SiteFooter } from "@/components/site-footer";
+import { AutonomyCalculator } from "@/components/tools/autonomy-calculator";
+import { getCalculatorProducts } from "@/lib/calculator-products";
+import styles from "./page.module.css";
 
-export default function FindPowerStationPage() {
-  return <PagePlaceholder title="Encontrar una power station" description="Aquí se integrará el futuro cuestionario de recomendación." />;
-}
+export const metadata:Metadata={title:{absolute:"Calculadora de autonomía para power stations | Carga Nómada"},description:"Calcula qué capacidad de power station necesitas o cuántos días puede durar una batería según tus aparatos y consumo diario.",alternates:{canonical:"/encontrar-power-station"},openGraph:{title:"Calculadora de autonomía para power stations",description:"Añade tus aparatos y estima capacidad, autonomía y modelos compatibles.",url:"/encontrar-power-station",siteName:"Carga Nómada",locale:"es_ES",type:"website"},twitter:{card:"summary",title:"Calculadora de autonomía para power stations",description:"Estima capacidad y autonomía a partir de tus consumos."}};
+
+export default function FindPowerStationPage(){const products=getCalculatorProducts();return <><main className={styles.page}><header className={styles.hero}><div className="container"><nav aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><span>Calculadora</span></nav><p>Herramienta · Consumo y capacidad</p><h1>Calculadora de autonomía para power stations</h1><div className={styles.intro}><p>Añade tus aparatos, indica cuánto tiempo los utilizas y calcula qué capacidad necesitas o cuánto podría durarte una batería concreta.</p><Link href="/guias/calcular-autonomia-power-station">Entender cómo hacemos el cálculo →</Link></div></div></header><div className="container"><AutonomyCalculator products={products}/><aside className={styles.note}><strong>Una estimación, no una promesa</strong><p>Los consumos reales, las pérdidas, la temperatura y los picos de arranque pueden cambiar el resultado. Revisa siempre la etiqueta y el manual de tus equipos.</p></aside></div></main><SiteFooter/></>}
