@@ -1,0 +1,79 @@
+.reviewImage {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: transparent;
+  isolation: isolate;
+}
+
+.reviewImage::after {
+  content: none;
+}
+
+.reviewImage img {
+  box-sizing: border-box;
+  padding: 0;
+  object-fit: contain;
+  transition: transform 350ms ease;
+}
+
+article:hover > .reviewImage img {
+  transform: scale(1.025);
+}
+
+.reviewAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2px 0 18px;
+}
+
+.reviewAuthor > img {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border: 1px solid #171a19;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewAuthor > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  column-gap: 6px;
+}
+
+.reviewAuthor span,
+.reviewAuthor small {
+  font: 500 0.56rem/1.35 "IBM Plex Mono", monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reviewAuthor span {
+  color: #666b67;
+}
+
+.reviewAuthor strong {
+  font: 700 1.05rem/1 "Source Serif 4", serif;
+}
+
+.reviewAuthor small {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  color: #666b67;
+}
+
+@media (min-width: 720px) {
+  .reviewImage {
+    height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviewImage img {
+    transition: none;
+  }
+}

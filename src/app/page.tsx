@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { fossibotF2400, getProductById } from "@/content/products";
+import { getProductById } from "@/content/products";
 import { reviews } from "@/content/reviews";
+import { personas } from "@/content/personas";
 import { SiteFooter } from "@/components/site-footer";
 import styles from "./page.module.css";
+import finderStyles from "./finder.module.css";
+import reviewImageStyles from "./review-images.module.css";
 
 export const metadata: Metadata = {
   title: "Power Stations para Camper, Camping y Caravana | Carga Nómada",
@@ -12,14 +15,18 @@ export const metadata: Metadata = {
     "Reviews, comparativas y guías sobre power stations para camper, camping, caravana, autocaravana y uso off-grid.",
 };
 
-const uses = [
-  ["01", "Camping", "Energía ligera para escapadas y tiendas de campaña."],
-  ["02", "Camper", "Autonomía para viajar, cocinar y cargar tus equipos."],
-  ["03", "Caravana", "Capacidad y potencia para consumos compartidos."],
-  ["04", "Autocaravana", "Energía fiable para rutas y estancias largas."],
-  ["05", "Trabajo remoto", "Portátil, conectividad y carga solar en ruta."],
-  ["06", "Off-grid", "Paneles, herramientas y consumos más exigentes."],
+const energyPaths = [
+  { number: "01", title: "Camping ligero", range: "300–700 Wh", description: "Móviles, luces, cámara y una nevera portátil para una escapada corta.", href: "/reviews/fossibot-f1200-review" },
+  { number: "02", title: "Camper y trabajo", range: "700–1.500 Wh", description: "Portátil, conectividad, nevera y carga diaria durante un fin de semana.", href: "/reviews/fossibot-f1800-review" },
+  { number: "03", title: "Caravana familiar", range: "1.500–2.500 Wh", description: "Varios dispositivos y pequeños electrodomésticos funcionando con margen.", href: "/reviews/fossibot-f2400-review" },
+  { number: "04", title: "Viaje largo u off-grid", range: "+2.500 Wh", description: "Consumos exigentes, estancias largas, expansión y apoyo de carga solar.", href: "/reviews/fossibot-f7200-review" },
 ] as const;
+
+const reviewCutoutByProductId: Record<string, string> = {
+  "fossibot-f1200": "/images/products/fossibot-f1200/cutout.png",
+  "fossibot-f1800": "/images/products/fossibot-f1800/cutout.png",
+  "fossibot-f2400": "/images/products/fossibot-f2400/cutout.png",
+};
 
 const basics = [
   [
@@ -80,7 +87,6 @@ const latestGuides = [
 ] as const;
 
 export default function HomePage() {
-  const featuredProduct = fossibotF2400;
   return (
     <>
       <main className={styles.home}>
@@ -121,59 +127,35 @@ export default function HomePage() {
           </p>
         </section>
 
-        <section
-          className={`${styles.section} ${styles.featured}`}
-          aria-labelledby="featured-title"
-        >
-          <div className={`container ${styles.featuredGrid}`}>
-            <div>
-              <p className={styles.kicker}>En portada · Review publicada</p>
-              <h2 id="featured-title">Análisis destacado</h2>
+        <section className={`${styles.section} ${finderStyles.finder}`} aria-labelledby="finder-title">
+          <div className="container">
+            <div className={finderStyles.finderHeading}>
+              <div>
+                <p className={styles.kicker}>Punto de partida · Orientación rápida</p>
+                <h2 id="finder-title">Encuentra la energía que necesitas</h2>
+              </div>
               <p className={styles.sectionIntro}>
-                La F2400 analizada para una caravana familiar: capacidad,
-                conexiones, recarga y autonomía.
+                Empieza por tu forma de viajar. Estos rangos son una referencia
+                inicial: el consumo y las horas de uso afinan la elección final.
               </p>
             </div>
-            <article className={styles.featuredCard}>
-              <div className={styles.mediaPlaceholder}>
-                <Image
-                  src={featuredProduct.images[0].src}
-                  alt={featuredProduct.images[0].alt}
-                  width={1440}
-                  height={1440}
-                  sizes="(max-width: 800px) 100vw, 50vw"
-                />
-              </div>
-              <div className={styles.featuredCopy}>
-                <p className={styles.meta}>Power station · Review</p>
-                <h3>{featuredProduct.name}</h3>
-                <dl className={styles.specList}>
-                  <div>
-                    <dt>Capacidad</dt>
-                    <dd>{featuredProduct.capacityWh} Wh</dd>
+            <div className={finderStyles.energyScale}>
+              {energyPaths.map((path) => (
+                <article key={path.number} className={finderStyles.energyPath}>
+                  <div className={finderStyles.pathTopline}>
+                    <span>{path.number}</span>
+                    <span className={finderStyles.range}>{path.range}</span>
                   </div>
-                  <div>
-                    <dt>Potencia continua</dt>
-                    <dd>{featuredProduct.continuousOutputWatts} W</dd>
-                  </div>
-                  <div>
-                    <dt>Batería</dt>
-                    <dd>{featuredProduct.battery.chemistry}</dd>
-                  </div>
-                  <div>
-                    <dt>Peso</dt>
-                    <dd>{featuredProduct.weightKg} kg</dd>
-                  </div>
-                </dl>
-                <p>
-                  Capacidad, conexiones y autonomía para varios consumos
-                  familiares.
-                </p>
-                <Link href="/reviews/fossibot-f2400-review">
-                  Leer la review completa <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </article>
+                  <h3>{path.title}</h3>
+                  <p>{path.description}</p>
+                  <Link href={path.href}>Ver review <span aria-hidden="true">→</span></Link>
+                </article>
+              ))}
+            </div>
+            <div className={finderStyles.finderFooter}>
+              <p><strong>¿No sabes cuánto consumes?</strong> Te ayudamos a pasar de aparatos y horas a una capacidad útil.</p>
+              <Link href="/encontrar-power-station">Calcular mi necesidad <span aria-hidden="true">→</span></Link>
+            </div>
           </div>
         </section>
 
@@ -189,13 +171,36 @@ export default function HomePage() {
               </Link>
             </div>
             <div className={styles.reviewGrid}>
-              {reviews.slice(0, 3).map((review, index) => {
+              {reviews.slice(0, 3).map((review) => {
                 const product = getProductById(review.productId);
+                const persona = personas.find(({ id }) => id === review.personaId);
                 return (
                   <article className={styles.reviewCard} key={review.id}>
-                    <div className={styles.thumb} aria-hidden="true">
-                      <span>0{index + 1}</span>
+                    <div className={reviewImageStyles.reviewImage}>
+                      {product?.images[0] && (
+                        <Image
+                          src={reviewCutoutByProductId[product.id] ?? product.images[0].src}
+                          alt={product.images[0].alt}
+                          fill
+                          sizes="(max-width: 719px) 100vw, 33vw"
+                        />
+                      )}
                     </div>
+                    {persona?.avatar && (
+                      <div className={reviewImageStyles.reviewAuthor}>
+                        <Image
+                          src={persona.avatar}
+                          alt={`Retrato del perfil editorial de ${persona.name}`}
+                          width={48}
+                          height={48}
+                        />
+                        <div>
+                          <span>Review de</span>
+                          <strong>{persona.name}</strong>
+                          <small>{persona.label}</small>
+                        </div>
+                      </div>
+                    )}
                     <p className={styles.meta}>
                       {product?.name} · Análisis editorial
                     </p>
@@ -208,41 +213,6 @@ export default function HomePage() {
                 );
               })}
             </div>
-          </div>
-        </section>
-
-        <section
-          className={`${styles.section} ${styles.uses}`}
-          aria-labelledby="uses-title"
-        >
-          <div className="container">
-            <div className={styles.sectionHeading}>
-              <p className={styles.kicker}>Rutas de lectura</p>
-              <h2 id="uses-title">Elige según cómo la vas a usar</h2>
-              <p className={styles.sectionIntro}>
-                Cada escenario cambia la capacidad, la potencia y las conexiones
-                que conviene priorizar.
-              </p>
-            </div>
-            <div className={styles.useGrid}>
-              {uses.map(([number, title, description]) => (
-                <article key={title}>
-                  <span>{number}</span>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <Link
-                    href="/guias"
-                    aria-label={`Ver guías para ${title.toLowerCase()}`}
-                  >
-                    Guías para {title.toLowerCase()} <b aria-hidden="true">↗</b>
-                  </Link>
-                </article>
-              ))}
-            </div>
-            <p className={styles.architectureNote}>
-              Próximas rutas especializadas: <code>/usos/camping</code>,{" "}
-              <code>/usos/camper</code>, <code>/usos/caravana</code> y más.
-            </p>
           </div>
         </section>
 

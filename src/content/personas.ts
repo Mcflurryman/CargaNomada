@@ -3,6 +3,7 @@ import { definePersona, type Persona } from "@/domain/persona";
 export const personas: readonly Persona[] = [
   definePersona({
     id: "juan", name: "Juan", slug: "juan", label: "Camping de fin de semana",
+    avatar: "/images/home/personas/Juan-natural.png",
     shortDescription: "Escapadas ligeras de dos o tres días, sin complicarse con la electricidad.",
     lifestyle: "Camping de fin de semana, normalmente en escapadas de dos o tres días.",
     description: "Representa a quien busca energía sencilla para disfrutar del camping sin cargar con más peso ni complejidad de la necesaria.",
@@ -13,6 +14,7 @@ export const personas: readonly Persona[] = [
   } satisfies Persona),
   definePersona({
     id: "laura", name: "Laura", slug: "laura", label: "Caravana familiar",
+    avatar: "/images/home/personas/Laura-natural.png",
     shortDescription: "Más autonomía y potencia para viajar en familia con varios dispositivos.",
     lifestyle: "Viajes en caravana con pareja e hijos.",
     description: "Representa necesidades familiares reales: mantener los equipos del viaje funcionando de forma cómoda y fiable.",
@@ -23,6 +25,7 @@ export const personas: readonly Persona[] = [
   } satisfies Persona),
   definePersona({
     id: "alex", name: "Álex", slug: "alex", label: "Nómada digital",
+    avatar: "/images/home/personas/Alex-natural.png",
     shortDescription: "Trabajo remoto desde una camper con necesidades técnicas y de carga solar.",
     lifestyle: "Trabajo desde una camper durante viajes prolongados.",
     description: "Representa a quien necesita mantener operativo un espacio de trabajo móvil y entiende las especificaciones que afectan a su autonomía.",
