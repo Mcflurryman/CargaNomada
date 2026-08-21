@@ -85,15 +85,13 @@ export function estimatedDays(capacityWh: number, usableFraction: number, dailyE
 
 export function productFit(product: CalculatorProduct, minimumWh: number, targetWh: number, assessment: PowerAssessment): ProductFit {
   const capacityPass = product.capacityWh >= minimumWh;
-  const powerPass = assessment.status === "unknown"
+  const powerPass = assessment.status !== "complete"
     ? null
     : product.continuousOutputWatts >= assessment.knownSimultaneousWatts;
 
   if (!capacityPass || powerPass === false) {
     const explanation = powerPass === false && capacityPass
-      ? assessment.status === "partial"
-        ? "La capacidad alcanza, pero la potencia conocida ya supera el límite; además faltan W por evaluar."
-        : "La capacidad alcanza, pero faltaría potencia si todo coincidiera."
+      ? "La capacidad alcanza, pero faltaría potencia si todo coincidiera."
       : !capacityPass && powerPass !== false
         ? assessment.status === "complete"
           ? "La potencia alcanza, pero la capacidad queda por debajo del mínimo."
@@ -107,7 +105,7 @@ export function productFit(product: CalculatorProduct, minimumWh: number, target
     : " Cumple la capacidad calculada. No podemos validar completamente la potencia porque faltan los W de uno o más aparatos.";
   if (product.capacityWh < targetWh) return { status: "tight", capacityPass, powerPass, powerStatus: assessment.status, explanation: `Supera el mínimo, pero no alcanza el objetivo con margen.${uncertainty}` };
   if (product.capacityWh > targetWh * 1.6) return { status: "more", capacityPass, powerPass, powerStatus: assessment.status, explanation: `Ofrece bastante más capacidad; también puede implicar más peso, tamaño y coste.${uncertainty}` };
-  return { status: "good", capacityPass, powerPass, powerStatus: assessment.status, explanation: assessment.status === "complete" ? "Cubre el objetivo de capacidad y el escenario conservador de potencia." : "Buen encaje de capacidad. No podemos validar completamente la potencia porque faltan los W de uno o más aparatos." };
+  return { status: "good", capacityPass, powerPass, powerStatus: assessment.status, explanation: assessment.status === "complete" ? "Cubre el objetivo de capacidad y el escenario conservador de potencia." : "Encaja por capacidad. Faltan datos de potencia en uno o más aparatos." };
 }
 
 export function sortProductsByFit(products: readonly CalculatorProduct[], minimumWh: number, targetWh: number, assessment: PowerAssessment): CalculatorProduct[] {
