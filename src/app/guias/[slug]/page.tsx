@@ -9,7 +9,7 @@ import styles from "../guide.module.css";
 
 const guideSlug = "calcular-autonomia-power-station";
 const publishedAt = "2026-08-21";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carganomada.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://carganomada.com";
 const title = "Cómo calcular la autonomía de una power station";
 const seoTitle = "Calcular autonomía de una power station | Carga Nómada";
 const description = "Aprende a calcular cuánto dura una power station con Wh, consumo en W, pérdidas y ejemplos de portátil, nevera, Starlink y cafetera.";

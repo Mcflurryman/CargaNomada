@@ -5,7 +5,7 @@ import { getProductById } from "@/content/products";
 import styles from "../guide.module.css";
 import scale from "./scale.module.css";
 
-const slug="wh-power-station",publishedAt="2026-08-21",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
+const slug="wh-power-station",publishedAt="2026-08-21",siteUrl=process.env.NEXT_PUBLIC_SITE_URL||"https://carganomada.com";
 const title="Qué son los Wh en una power station";
 const seoTitle="Qué son los Wh de una power station | Carga Nómada";
 const description="Aprende qué significan los Wh de una power station, cómo interpretar su capacidad y cómo calcular cuánta energía necesitas para tus aparatos.";

@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { getProductById } from "@/content/products";
 import styles from "../use-case.module.css";
 
-const slug="off-grid",publishedAt="2026-08-22",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
+const slug="off-grid",publishedAt="2026-08-22",siteUrl=process.env.NEXT_PUBLIC_SITE_URL||"https://carganomada.com";
 const title="Qué power station necesitas para varios días off-grid";
 const description="Dimensiona una power station off-grid equilibrando consumo diario, batería, recuperación solar, potencia y días de reserva sin red.";
 export const metadata:Metadata={title:{absolute:"Power station off-grid: consumo, solar y reserva | Carga Nómada"},description,alternates:{canonical:`/usos/${slug}`},openGraph:{type:"article",url:`/usos/${slug}`,title,description,siteName:"Carga Nómada",locale:"es_ES",publishedTime:publishedAt,modifiedTime:publishedAt},twitter:{card:"summary",title,description}};

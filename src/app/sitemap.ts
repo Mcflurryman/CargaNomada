@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { personas } from "@/content/personas";
 import { reviews } from "@/content/reviews";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carganomada.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://carganomada.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date("2026-08-20");

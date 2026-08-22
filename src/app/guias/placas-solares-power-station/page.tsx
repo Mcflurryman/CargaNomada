@@ -8,7 +8,7 @@ import solar from "./solar.module.css";
 const slug = "placas-solares-power-station";
 const publishedAt = "2026-08-21";
 const modifiedAt = "2026-08-22";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carganomada.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://carganomada.com";
 const title = "Cómo elegir placas solares para una power station";
 const seoTitle = "Placas solares para power station: guía | Carga Nómada";
 const description = "Aprende a elegir placas solares compatibles con tu power station: potencia, voltaje, amperios, conectores, tiempos de carga y seguridad.";

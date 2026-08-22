@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { getProductById } from "@/content/products";
 import styles from "../use-case.module.css";
 
-const slug="trabajo-remoto",publishedAt="2026-08-22",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
+const slug="trabajo-remoto",publishedAt="2026-08-22",siteUrl=process.env.NEXT_PUBLIC_SITE_URL||"https://carganomada.com";
 const title="Qué power station necesitas para trabajar en remoto";
 const description="Calcula la power station para trabajo remoto según portátil, monitor, router, Starlink, Wh por jornada, USB-C y días entre recargas.";
 export const metadata:Metadata={title:{absolute:"Power station para trabajo remoto | Carga Nómada"},description,alternates:{canonical:`/usos/${slug}`},openGraph:{type:"article",url:`/usos/${slug}`,title,description,siteName:"Carga Nómada",locale:"es_ES",publishedTime:publishedAt,modifiedTime:publishedAt},twitter:{card:"summary",title,description}};

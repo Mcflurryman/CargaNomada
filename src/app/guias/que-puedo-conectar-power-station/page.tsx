@@ -7,7 +7,7 @@ import flowStyles from "./page.module.css";
 
 const slug = "que-puedo-conectar-power-station";
 const publishedAt = "2026-08-21";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carganomada.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://carganomada.com";
 const title = "Qué puedes conectar a una power station";
 const seoTitle = "Qué conectar a una power station | Carga Nómada";
 const description = "Descubre qué aparatos puedes conectar a una power station según su potencia continua, pico de arranque, puertos y consumo simultáneo.";

@@ -10,7 +10,7 @@ import { getReviewBySlug, reviews } from "@/content/reviews";
 import type { Product } from "@/domain/product";
 import styles from "../reviews.module.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carganomada.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://carganomada.com";
 type Props = { params: Promise<{ slug: string }> };
 const nf = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
 const fmt = (value: number) => nf.format(value);

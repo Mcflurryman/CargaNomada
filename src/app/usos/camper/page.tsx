@@ -5,7 +5,7 @@ import { getProductById } from "@/content/products";
 import styles from "../use-case.module.css";
 
 const publishedAt="2026-08-22";
-const siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
+const siteUrl=process.env.NEXT_PUBLIC_SITE_URL||"https://carganomada.com";
 const title="Qué power station necesitas para una camper";
 const description="Calcula qué power station necesitas para una camper según nevera 12 V, portátil, autonomía y recarga en ruta, solar o red.";
 export const metadata:Metadata={title:{absolute:"Power station para camper: qué necesitas | Carga Nómada"},description,alternates:{canonical:"/usos/camper"},openGraph:{type:"article",url:"/usos/camper",title,description,siteName:"Carga Nómada",locale:"es_ES",publishedTime:publishedAt,modifiedTime:publishedAt},twitter:{card:"summary",title,description}};
