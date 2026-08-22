@@ -5,7 +5,7 @@ import styles from "../guide.module.css";
 import anatomy from "./anatomy.module.css";
 
 const slug="que-es-una-power-station", publishedAt="2026-08-21";
-const siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"http://localhost:3000";
+const siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
 const title="Qué es una power station y para qué sirve";
 const seoTitle="Qué es una power station y cómo funciona | Carga Nómada";
 const description="Descubre qué es una power station, cómo almacena y entrega energía, para qué sirve y qué debes mirar antes de elegir una estación portátil.";

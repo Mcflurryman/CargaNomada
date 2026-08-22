@@ -6,7 +6,7 @@ import styles from "../use-case.module.css";
 
 const slug = "camping";
 const publishedAt = "2026-08-22";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carganomada.com";
 const title = "Qué power station necesitas para camping";
 const seoTitle = "Power station para camping: qué necesitas | Carga Nómada";
 const description = "Elige una power station para camping según tus aparatos, días, nevera, potencia, recarga y peso. Tres escenarios con cálculos transparentes.";

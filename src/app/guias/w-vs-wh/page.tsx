@@ -5,7 +5,7 @@ import { getProductById } from "@/content/products";
 import styles from "../guide.module.css";
 import compare from "./compare.module.css";
 
-const slug="w-vs-wh",publishedAt="2026-08-21",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"http://localhost:3000";
+const slug="w-vs-wh",publishedAt="2026-08-21",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
 const title="W vs Wh: diferencia entre potencia y energía";
 const seoTitle="W vs Wh en una power station | Carga Nómada";
 const description="Entiende la diferencia entre W y Wh en una power station: qué aparatos puede alimentar, cuánto pueden durar y cómo comparar modelos.";

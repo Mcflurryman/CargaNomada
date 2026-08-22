@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { getProductById } from "@/content/products";
 import styles from "../use-case.module.css";
 
-const slug="caravana-autocaravana",publishedAt="2026-08-22",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"http://localhost:3000";
+const slug="caravana-autocaravana",publishedAt="2026-08-22",siteUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
 const title="Qué power station necesitas para una caravana o autocaravana";
 const description="Calcula qué power station necesitas para caravana o autocaravana según aparatos, potencia simultánea, días, solar y recarga.";
 export const metadata:Metadata={title:{absolute:"Power station para caravana y autocaravana | Carga Nómada"},description,alternates:{canonical:`/usos/${slug}`},openGraph:{type:"article",url:`/usos/${slug}`,title,description,siteName:"Carga Nómada",locale:"es_ES",publishedTime:publishedAt,modifiedTime:publishedAt},twitter:{card:"summary",title,description}};

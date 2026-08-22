@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ComparisonHero, DecisionSections } from "@/components/comparisons/comparison";
 import { comparison } from "@/content/comparisons/fossibot-f1200-vs-f1800";
-const baseUrl=process.env.NEXT_PUBLIC_SITE_URL??"http://localhost:3000";
+const baseUrl=process.env.NEXT_PUBLIC_SITE_URL??"https://carganomada.com";
 export const metadata:Metadata={title:`${comparison.title}: cuál elegir`,description:comparison.description,alternates:{canonical:"/comparativas/fossibot-f1200-vs-f1800"},openGraph:{title:`${comparison.title}: cuál elegir`,description:comparison.description,type:"article",images:[comparison.left.images[0].src]}};
 export default function Page(){const schemas=[{"@context":"https://schema.org","@type":"Article",headline:comparison.title,description:comparison.description,dateModified:comparison.updatedAt,mainEntityOfPage:`${baseUrl}/comparativas/${comparison.slug}`,author:{"@type":"Organization",name:"Carga Nómada"}},{"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"Inicio",item:baseUrl},{"@type":"ListItem",position:2,name:"Comparativas",item:`${baseUrl}/comparativas`},{"@type":"ListItem",position:3,name:comparison.title,item:`${baseUrl}/comparativas/${comparison.slug}`}]}];return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schemas).replace(/</g,"\\u003c")}}/><ComparisonHero/><DecisionSections/></>}
