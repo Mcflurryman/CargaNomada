@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes.map((route) => ({ url: `${baseUrl}${route}`, lastModified: updated, changeFrequency: "monthly" as const, priority: route === "" ? 1 : route === "/reviews" ? .9 : .6 })),
     { url: `${baseUrl}/encontrar-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "monthly" as const, priority: .8 },
+    { url: `${baseUrl}/usos`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .7 },
+    { url: `${baseUrl}/usos/camping`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/guias/que-es-una-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
     { url: `${baseUrl}/guias/wh-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
     { url: `${baseUrl}/guias/w-vs-wh`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
