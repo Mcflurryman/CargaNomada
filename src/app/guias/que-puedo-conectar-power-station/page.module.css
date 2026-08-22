@@ -1,0 +1,33 @@
+.decisionFlow {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  background: #191b1c;
+  color: #fffdfa;
+  list-style: none;
+}
+
+.decisionFlow li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-bottom: 1px solid #4b4e48;
+  font: 600 .75rem/1.35 "IBM Plex Mono", monospace;
+}
+
+.decisionFlow li:last-child {
+  border-bottom: 0;
+}
+
+.decisionFlow span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d8e84e;
+  color: #d8e84e;
+  font-size: .62rem;
+}
