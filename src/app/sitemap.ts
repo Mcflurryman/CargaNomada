@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/usos/camping`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/usos/camper`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/usos/caravana-autocaravana`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
+    { url: `${baseUrl}/usos/trabajo-remoto`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/guias/que-es-una-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
     { url: `${baseUrl}/guias/wh-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
     { url: `${baseUrl}/guias/w-vs-wh`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
