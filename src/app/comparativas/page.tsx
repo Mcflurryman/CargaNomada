@@ -1,3 +1,7 @@
-import { PagePlaceholder } from "@/components/page-placeholder";
-export const metadata = { title: "Comparativas" };
-export default function ComparisonsPage() { return <PagePlaceholder title="Comparativas" description="Las comparativas editoriales aparecerán aquí." />; }
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { comparison } from "@/content/comparisons/fossibot-f1200-vs-f1800";
+import styles from "@/components/comparisons/comparison.module.css";
+export const metadata:Metadata={title:"Comparativas de power stations",description:"Comparativas editoriales de power stations basadas en capacidad, potencia, recarga y usos concretos."};
+export default function ComparisonsPage(){return <main className={styles.main}><header className={styles.hero}><span className={styles.kicker}>Centro de decisión</span><h1>Comparativas de power stations</h1><p>Enfrentamos modelos con datos verificables y escenarios transparentes para que veas qué cambia de verdad.</p></header><section><div className={styles.heading}><span>01</span><div><p>Publicada</p><h2>Comparativa disponible</h2></div></div><div className={styles.verdicts}><article className={styles.featured}><Image src={comparison.right.images[0].src} alt={comparison.right.images[0].alt} width={420} height={280} style={{width:"100%",height:180,objectFit:"contain"}}/><span>Misma capacidad · distinta potencia</span><h3>{comparison.title}</h3><p>1.024 Wh en ambos modelos. Compara los 1.200/1.800 W, la entrada solar y las conexiones.</p><Link href={`/comparativas/${comparison.slug}`} style={{color:"white",fontWeight:800}}>Abrir comparativa →</Link></article></div></section></main>}

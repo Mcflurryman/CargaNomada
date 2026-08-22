@@ -6,7 +6,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date("2026-08-20");
-  const staticRoutes = ["", "/reviews", "/comparativas", "/guias", "/perfiles", "/sobre-carga-nomada"];
+  const staticRoutes = ["", "/reviews", "/guias", "/perfiles", "/sobre-carga-nomada"];
   return [
     ...staticRoutes.map((route) => ({ url: `${baseUrl}${route}`, lastModified: updated, changeFrequency: "monthly" as const, priority: route === "" ? 1 : route === "/reviews" ? .9 : .6 })),
     { url: `${baseUrl}/encontrar-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "monthly" as const, priority: .8 },
@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/usos/caravana-autocaravana`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/usos/trabajo-remoto`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/usos/off-grid`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
+    { url: `${baseUrl}/comparativas`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .7 },
+    { url: `${baseUrl}/comparativas/fossibot-f1200-vs-f1800`, lastModified: new Date("2026-08-22"), changeFrequency: "monthly" as const, priority: .8 },
     { url: `${baseUrl}/guias/que-es-una-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
     { url: `${baseUrl}/guias/wh-power-station`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },
     { url: `${baseUrl}/guias/w-vs-wh`, lastModified: new Date("2026-08-21"), changeFrequency: "yearly" as const, priority: .8 },

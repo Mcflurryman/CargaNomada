@@ -5,7 +5,7 @@ import styles from "./use-case.module.css";
 
 export const metadata: Metadata = {
   title: "Power stations por caso de uso",
-  description: "Elige una power station según tus aparatos, días de uso, recarga y necesidad de transporte.",
+  description: "Elige una power station según tus aparatos, horas de uso, autonomía, potencia y opciones de recarga.",
   alternates: { canonical: "/usos" },
 };
 
